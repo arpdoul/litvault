@@ -1,0 +1,9 @@
+node_modules/
+.env
+cache/
+artifacts/
+frontend/src/abi/deployment.json
+frontend/src/abi/LitVault.json
+frontend/src/abi/MockzkLTC.json
+dist/
+.DS_Store

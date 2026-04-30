@@ -1,0 +1,7 @@
+{
+  "name": "litvault-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "dev": "node --watch src/index.js", "start": "node src/index.js" },
+  "dependencies": { "express": "^4.19.2", "ethers": "^6.11.1", "cors": "^2.8.5", "dotenv": "^16.4.5" }
+}
