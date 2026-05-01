@@ -1,4 +1,4 @@
-require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-ethers");
 require("dotenv").config();
 const raw = process.env.PRIVATE_KEY || "0".repeat(64);
 const PRIVATE_KEY = raw.startsWith("0x") ? raw : "0x" + raw;

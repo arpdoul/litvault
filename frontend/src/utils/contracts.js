@@ -27,7 +27,7 @@ export async function switchToLiteForge() {
   if (!window.ethereum) throw new Error("No wallet");
   try { await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [{ chainId: "0x1159" }] }); }
   catch (e) {
-    if (e.code === 4902) await window.ethereum.request({ method: "wallet_addEthereumChain", params: [{ chainId: "0x1159", chainName: "LiteForge Testnet", nativeCurrency: { name: "zkLTC", symbol: "zkLTC", decimals: 18 }, rpcUrls: ["https://rpc.testnet.litvm.com"], blockExplorerUrls: ["https://explorer.testnet.litvm.com"] }] });
+    if (e.code === 4902) await window.ethereum.request({ method: "wallet_addEthereumChain", params: [{ chainId: "0x1159", chainName: "LiteForge Testnet", nativeCurrency: { name: "zkLTC", symbol: "zkLTC", decimals: 18 }, rpcUrls: ["https://liteforge.rpc.caldera.xyz/http"], blockExplorerUrls: ["https://liteforge.explorer.caldera.xyz"] }] });
     else throw e;
   }
 }

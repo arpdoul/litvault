@@ -9,7 +9,7 @@ import "./index.css";
 export const liteforge = defineChain({
   id: 4441, name: "LiteForge Testnet",
   nativeCurrency: { name: "zkLTC", symbol: "zkLTC", decimals: 18 },
-  rpcUrls: { default: { http: ["https://rpc.testnet.litvm.com"] } },
+  rpcUrls: { default: { http: ["https://liteforge.rpc.caldera.xyz/http"] } },
   blockExplorers: { default: { name: "Explorer", url: "https://explorer.testnet.litvm.com" } },
   testnet: true,
 });
