@@ -1,0 +1,10 @@
+{
+  "network": "liteforge-testnet",
+  "chainId": 4441,
+  "deployedAt": "2026-04-30T23:11:25.984Z",
+  "deployer": "0x05026B6f74b5C73D230a32e9EB23A5EAa7F8ea51",
+  "contracts": {
+    "MockzkLTC": "0xc252c356DeA3ccf3cbC0632810563117C628751E",
+    "LitVault": "0x24b653b62533427E0b70e92c0e3a3E4D15597e64"
+  }
+}
