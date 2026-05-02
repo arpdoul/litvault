@@ -20,6 +20,12 @@ function VaultPanel({vaultStats,userInfo,zkLTCBalance,txLoading,txHash,deposit,w
     <button onClick={claimFaucet} disabled={txLoading} className="btn-secondary w-full py-3 rounded-xl text-xs mt-3 flex items-center justify-center gap-2"><Droplets size={12}/>Claim 1,000 zkLTC Faucet</button>
   </div>);}
 export default function App(){
+useEffect(() => {
+  const ping = () => fetch("https://litvault-0q0n.onrender.com/api/health").catch(()=>{});
+  ping();
+  const interval = setInterval(ping, 14 * 60 * 1000);
+  return () => clearInterval(interval);
+}, []);
   const {address,signer,connecting,error:wErr,connect}=useWallet();
   const {vaultStats,userInfo,zkLTCBalance,txLoading,txHash,deposit,withdraw,claimFaucet}=useVault(signer,address);
   return(<div className="min-h-screen">

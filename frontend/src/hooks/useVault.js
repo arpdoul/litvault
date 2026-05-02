@@ -63,10 +63,14 @@ export function useVault(signer, address) {
       setTxHash(r.hash); await refresh();
     } finally { setTxLoading(false); }
   }, [signer, refresh]);
-  const claimFaucet = useCallback(async () => {
-    setTxLoading(true);
-    try { const zkLTC = await getzkLTCContract(signer); await (await zkLTC.faucet()).wait(); await refresh(); }
-    finally { setTxLoading(false); }
-  }, [signer, refresh]);
-  return { vaultStats, userInfo, zkLTCBalance, txLoading, txHash, deposit, withdraw, claimFaucet, refresh };
-}
+const res = await fetch(
+  "https://litvault-0q0n.onrender.com/api/faucet",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ address }),
+  }
+);
+const data = await res.json();
+if (!res.ok) throw new Error(data.error);
+await refresh();
